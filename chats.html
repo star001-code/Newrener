@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>محادثات الذكرى</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/effects.js"></script>
+  <style>
+    .chat-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .chat-gallery img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>💬 محادثات الذكرى</h1>
+  <p>سكرينات من زمنٍ ما يعود…</p>
+
+  <div class="chat-gallery">
+    {% for i in range(1, 16) %}
+      <img src="/static/chats/chat{{ "%02d"|format(i) }}.jpg" alt="محادثة {{ i }}">
+    {% endfor %}
+  </div>
+
+  <br>
+  <a href="/home"><button>🔙 رجوع للذكرى</button></a>
+</body>
+</html>
